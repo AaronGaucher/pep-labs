@@ -7,9 +7,16 @@ public class CustomExceptionThrower {
      * exceptions could provide valuable information for when something goes wrong in the application.
      *
      * I recommend looking at the test case for a good example of try/catch block usage, as well.
+     * @throws CustomException
      */
-    public void throwCustomException(){
-        
+    public void throwCustomException() throws CustomException{
+        validateAge(3);
+    }
+
+    private void validateAge(int i) throws CustomException {
+        if ( i < 0) {
+            throw new CustomException();
+        }
     }
 
 }
