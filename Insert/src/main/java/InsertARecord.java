@@ -40,6 +40,11 @@ public class InsertARecord {
         try {
             Connection connection = ConnectionUtil.getConnection();
             Statement s = connection.createStatement();
+            {
+                sql= "INSERT INTO song " +
+                "(title, artist) " +
+                "VALUES ('Beat It', 'Micheal Jackson'); ";
+            }
             return s.executeUpdate(sql) != 0;
 
         } catch (SQLException e) {
