@@ -41,11 +41,15 @@ public class GetAllSongs {
         try {
             Connection connection = ConnectionUtil.getConnection();
             Statement s = connection.createStatement();
+            {
+                sql = "SELECT * FROM Song;";
+                }
             ResultSet rs =s.executeQuery(sql);
-
+            
             while(rs.next()){
                 songs.add(new Song(rs.getString(1), rs.getString(2)));
             }
+            
         } catch (SQLException e) {
             System.out.println("problem1: " + e.getMessage() + '\n');
         }
