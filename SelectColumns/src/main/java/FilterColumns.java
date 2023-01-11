@@ -44,6 +44,10 @@ public class FilterColumns {
         try {
             Connection connection = ConnectionUtil.getConnection();
             Statement s = connection.createStatement();
+            {
+                sql = "SELECT firstname " +
+                "FROM site_user;";
+            }
             ResultSet rs =s.executeQuery(sql);
             while(rs.next()){
                 users.add(new User(0, rs.getString(1), null));
