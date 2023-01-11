@@ -72,6 +72,7 @@ public class CreateATable {
         } catch (SQLException e) {
             System.out.println("problem1: " + e.getMessage() + '\n');
         }
+        
     }
 
 }
