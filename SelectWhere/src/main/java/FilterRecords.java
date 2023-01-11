@@ -75,6 +75,10 @@ public class FilterRecords {
         try {
             Connection connection = ConnectionUtil.getConnection();
             Statement s = connection.createStatement();
+            {
+                sql = "SELECT * FROM employee " +
+                "WHERE last_name = 'Smith';";
+            }
             ResultSet rs =s.executeQuery(sql);
 
             while(rs.next()){
@@ -109,6 +113,10 @@ public class FilterRecords {
         try {
             Connection connection = ConnectionUtil.getConnection();
             Statement s = connection.createStatement();
+            {
+                sql = "SELECT * FROM employee " +
+                "WHERE salary > 75000;";
+            }
             ResultSet rs =s.executeQuery(sql);
 
             while(rs.next()){
