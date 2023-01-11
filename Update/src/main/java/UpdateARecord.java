@@ -43,6 +43,11 @@ public class UpdateARecord {
         try {
             Connection connection = ConnectionUtil.getConnection();
             Statement s = connection.createStatement();
+            {
+                sql = "UPDATE site_user " +
+                "SET lastname = 'Rush' " +
+                "WHERE firstname = 'Alexa';";
+            }
             s.executeUpdate(sql);
 
         } catch (SQLException e) {
