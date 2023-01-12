@@ -41,6 +41,10 @@ public class DeleteRecords {
         try {
             Connection connection = ConnectionUtil.getConnection();
             Statement s = connection.createStatement();
+            {
+                sql = "DELETE From site_user " +
+                "WHERE firstname = 'Steve';"; 
+            }
             s.executeUpdate(sql);
 
         } catch (SQLException e) {
