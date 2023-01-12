@@ -55,6 +55,10 @@ public class OrderResultSetActivity {
         try {
             Connection connection = ConnectionUtil.getConnection();
             Statement s = connection.createStatement();
+            {
+                sql = "SELECT * FROM character " +
+                "ORDER BY last_name, first_name;";
+            }
             ResultSet rs =s.executeQuery(sql);
 
             while(rs.next()) {
