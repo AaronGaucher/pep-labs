@@ -15,6 +15,31 @@ public class ArraysAreEqual {
      * @return true if the values of a are equal to the values of b.
      */
     public boolean equal(int[] a, int[] b){
-        return false;
+        boolean status = true;
+        int[] temp = new int [a.length];
+        setOrder(a, temp);
+        setOrder(b, temp);
+        for(int index = 0; index < a.length; index++) {
+            if(a[index] != b[index]) {
+                status = false;
+                break;
+            }
+        }
+        return status;
+    }
+    public int[] setOrder(int[] a, int[] temp) {
+        int min = a[0];
+        for(int index = 0; index < temp.length; index++) {
+            for(int order = 0; order < a.length; order++) {
+                if(min < a[index]) {
+                    min = a[index];
+                }
+            }
+            temp[index] = min;
+        }
+        for(int x = 0; x < a.length; x++) {
+            a[x] = temp[x];
+        }
+        return a;
     }
 }
