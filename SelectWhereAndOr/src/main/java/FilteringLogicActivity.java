@@ -71,6 +71,11 @@ public class FilteringLogicActivity {
         try {
             Connection connection = ConnectionUtil.getConnection();
             Statement s = connection.createStatement();
+            {
+                sql = "SELECT * FROM employee " +
+                "WHERE first_name = 'Steve' " +
+                "AND salary > 75000;";
+            }
             ResultSet rs =s.executeQuery(sql);
 
             while(rs.next()) {
@@ -96,6 +101,11 @@ public class FilteringLogicActivity {
         try {
             Connection connection = ConnectionUtil.getConnection();
             Statement s = connection.createStatement();
+            {
+                sql = "SELECT * FROM employee " +
+                "WHERE salary > 100000 " +
+                "OR salary < 50000;";
+            }
             ResultSet rs =s.executeQuery(sql);
 
             while(rs.next()) {
@@ -122,6 +132,11 @@ public class FilteringLogicActivity {
         try {
             Connection connection = ConnectionUtil.getConnection();
             Statement s = connection.createStatement();
+            {
+                sql = "SELECT * FROM employee " +
+                "WHERE salary > 50000 " +
+                "AND first_name != 'Steve'";
+            }
             ResultSet rs =s.executeQuery(sql);
 
             while(rs.next()) {
