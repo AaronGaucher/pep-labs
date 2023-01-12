@@ -15,7 +15,7 @@ public class CustomExceptionThrower {
 
     private void validateAge(int i) throws CustomException {
         if ( i < 0) {
-            throw new CustomException();
+            throw new CustomException("Invalid age");
         }
     }
 
