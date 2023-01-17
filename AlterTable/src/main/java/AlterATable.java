@@ -59,6 +59,10 @@ public class AlterATable {
         try {
             Connection connection = ConnectionUtil.getConnection();
             Statement s = connection.createStatement();
+            {
+                sql = "ALTER TABLE site_user " +
+                "ADD lastname varchar(100);";
+            }
             s.executeUpdate(sql);
 
         } catch (SQLException e) {
