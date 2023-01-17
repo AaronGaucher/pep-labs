@@ -65,6 +65,11 @@ public class GroupByActivity {
         try {
             Connection connection = ConnectionUtil.getConnection();
             Statement s = connection.createStatement();
+            {
+                sql = "Select artist, Count(song) " +
+                "From song " +
+                "Group By artist;";
+            }
             ResultSet rs =s.executeQuery(sql);
 
             while(rs.next()) {
