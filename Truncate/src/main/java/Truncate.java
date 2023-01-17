@@ -37,6 +37,9 @@ public class Truncate {
         try {
             Connection connection = ConnectionUtil.getConnection();
             Statement s = connection.createStatement();
+            {
+                sql = "TRUNCATE TABLE song";
+            }
             s.executeUpdate(sql);
 
         } catch (SQLException e) {
