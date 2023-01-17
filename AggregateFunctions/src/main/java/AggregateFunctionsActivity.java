@@ -56,6 +56,10 @@ public class AggregateFunctionsActivity {
         try {
             Connection connection = ConnectionUtil.getConnection();
             Statement s = connection.createStatement();
+            {
+                sql = "Select Sum(salarly) " +
+                "From employee;";
+            }
             ResultSet rs =s.executeQuery(sql);
 
             if(rs.next()) {
@@ -80,6 +84,11 @@ public class AggregateFunctionsActivity {
         try {
             Connection connection = ConnectionUtil.getConnection();
             Statement s = connection.createStatement();
+            {
+                sql = "Select Count(*) " +
+                "From employee " + 
+                "Where last_name = 'Smith';";
+            }
             ResultSet rs =s.executeQuery(sql);
 
             if(rs.next()) {
@@ -105,6 +114,10 @@ public class AggregateFunctionsActivity {
         try {
             Connection connection = ConnectionUtil.getConnection();
             Statement s = connection.createStatement();
+            {
+                sql = "Select min(salary) " +
+                "From employee;";
+            }
             ResultSet rs =s.executeQuery(sql);
 
             if(rs.next()) {
@@ -129,6 +142,10 @@ public class AggregateFunctionsActivity {
         try {
             Connection connection = ConnectionUtil.getConnection();
             Statement s = connection.createStatement();
+            {
+                sql = "Select Max(salary) " +
+                "From employee;";
+            }
             ResultSet rs =s.executeQuery(sql);
 
             if(rs.next()) {
